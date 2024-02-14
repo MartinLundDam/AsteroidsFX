@@ -7,11 +7,15 @@ public interface IEntityProcessingService {
 
     /**
      *
-     *
+     *@Precondition: Gamedata must be loaded before the world open.
+     *@Postcondition: All processes must be terminated.
      *
      * @param gameData
      * @param world
-     * @throws
+     * @throws NullPointerException
+     *
+     *
+     *
      */
     void process(GameData gameData, World world);
 }
