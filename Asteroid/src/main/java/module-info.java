@@ -1,0 +1,10 @@
+import dk.sdu.mmmi.asteroidsystem.AsteroidPlugin;
+import dk.sdu.mmmi.asteroidsystem.AstoroidControlSystem;
+import dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;
+import dk.sdu.mmmi.cbse.common.services.IGamePluginService;
+
+module Asteroid {
+    requires Common;
+    provides IGamePluginService with AsteroidPlugin;
+    provides IEntityProcessingService with AstoroidControlSystem;
+}

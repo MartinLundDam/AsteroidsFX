@@ -17,40 +17,34 @@ import static java.util.stream.Collectors.toList;
 public class EnemyControlSystem implements IEntityProcessingService {
 
     Random random = new Random();
-    @Override
+    int randomDirection = random.nextInt(2);
+    int randomShoot = random.nextInt(40); //shoot at random when = 39
+
+
 
     public void process(GameData gameData, World world) {
 
         for (Entity enemy : world.getEntities(Enemy.class)) {
-            enemy.setRotation(enemy.getRotation() + random.nextInt((11)-5));
+            //enemy.setRotation(enemy.getRotation() + random.nextInt((11)-5));
 
-            if (random.nextBoolean()) {
-                double changeX = Math.cos(Math.toRadians(enemy.getRotation()));
-                double changeY = Math.cos(Math.toRadians(enemy.getRotation()));
-                enemy.setX(enemy.getX() + changeX);
-                enemy.setX(enemy.getY() + changeY);
-            }
-            /*
-            if (gameData.getKeys().isDown(GameKeys.LEFT)) {
+            double changeX = Math.cos(Math.toRadians(enemy.getRotation()));
+            double changeY = Math.sin(Math.toRadians(enemy.getRotation()));
+            enemy.setX(enemy.getX() + changeX*0.8); //make enemy a bit slower than playership
+            enemy.setY(enemy.getY() + changeY*0.8);
+
+            if (randomDirection == 0) {
                 enemy.setRotation(enemy.getRotation() - 5);
             }
-            if (gameData.getKeys().isDown(GameKeys.RIGHT)) {
+            if (randomDirection == 1) {
                 enemy.setRotation(enemy.getRotation() + 5);
             }
-            if (gameData.getKeys().isDown(GameKeys.UP)) {
-                double changeX = Math.cos(Math.toRadians(enemy.getRotation()));
-                double changeY = Math.sin(Math.toRadians(enemy.getRotation()));
-                enemy.setX(enemy.getX() + changeX);
-                enemy.setY(enemy.getY() + changeY);
 
-            }
-            if(gameData.getKeys().isDown(GameKeys.SPACE)) {
+            if(randomShoot == 39) {
                 getBulletSPIs().stream().findFirst().ifPresent(
                         spi -> {world.addEntity(spi.createBullet(enemy, gameData));}
                 );
             }
 
-             */
 
         if (enemy.getX() < 0) {
             enemy.setX(1);
