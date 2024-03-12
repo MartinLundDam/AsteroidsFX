@@ -1,0 +1,21 @@
+Igamepluginserveice interface. (implementeres mange af det samme interface)?
+Core modul er den der tegner java FX. De andre skal bare kende til entyterne
+Forksellige "common" for ikke at have et stort globalt interface.
+Ideen med Component basered er at have løs kopling, så man undgår fejl som i monilitisk system
+
+
+HVORFOR BRUGES JPMS?
+- Man kan skabe software vha. 3parts udviklere, uden at være bange for splitpackages
+- Brugte 13 år, da det var essensielt, at helloworld nu fylder få kb hvor det før var 1gb.
+
+DEPENDENCY INJECTION vs. CLASSLOADER?
+-
+
+IoC: Inversion of control
+Setter injection kan ændres løbende - Contructor injection er statisk.
+
+
+Ide:
+2 asteriod der collider skifter retning.
+
+
