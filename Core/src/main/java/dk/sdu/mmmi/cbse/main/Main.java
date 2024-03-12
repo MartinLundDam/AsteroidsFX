@@ -122,6 +122,16 @@ public class Main extends Application {
     }
 
     private void draw() {
+
+        // for loop til entity i polygons mappet. Tjekke om det polygon er ikke er i world mappet. Hvis den ikke er der, skal den fjerene den i polygons.
+        for (Entity entityInPolygonsMap : polygons.keySet()) {
+            if(!world.getEntities().contains(entityInPolygonsMap)) {
+                Polygon removedPolygon = polygons.get(entityInPolygonsMap); //find the polygon that is not in map.
+                polygons.remove(entityInPolygonsMap);
+                gameWindow.getChildren().remove(removedPolygon); //this does so it is removed while playing.
+            }
+        }
+        
         for (Entity entity : world.getEntities()) {
             Polygon polygon = polygons.get(entity);
             if (polygon == null) {
