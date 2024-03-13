@@ -18,6 +18,8 @@ public class BulletControlSystem implements IEntityProcessingService, BulletSPI 
             bullet.setX(bullet.getX() + changeX * 2);
             bullet.setY(bullet.getY() + changeY * 2);
         }
+
+        //remove bullet when hit edge
     }
 
     @Override

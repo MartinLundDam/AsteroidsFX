@@ -9,13 +9,27 @@ HVORFOR BRUGES JPMS?
 - Brugte 13 år, da det var essensielt, at helloworld nu fylder få kb hvor det før var 1gb.
 
 DEPENDENCY INJECTION vs. CLASSLOADER?
--
+- Servicelocater = har et register
+    Interface er polymorfisk
+
+SPRING: Bruger både Servicelocater og dependency injection.
+Module info core: require spring.core + context og beans
+ind i POM.xml
+opens javafx.graphics,spring.core
+Instanstiere objectgraf med xml
+- properties - spring version
+spring på mods.mvn -> includeartifact for at kopier over.
+
+Clean architecture: Ved brug af bean begynder forretningsmodel at afhænge af noget længere ude (spring aware interfaces)
 
 IoC: Inversion of control
 Setter injection kan ændres løbende - Contructor injection er statisk.
 
 
+
 Ide:
 2 asteriod der collider skifter retning.
+Hitpoint for entities
+
 
 

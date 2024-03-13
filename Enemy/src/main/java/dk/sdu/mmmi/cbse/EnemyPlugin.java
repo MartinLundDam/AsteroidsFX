@@ -26,6 +26,7 @@ public class EnemyPlugin implements IGamePluginService {
         enemyShip.setPolygonCoordinates(-5,-5,10,0,-5,5);
         enemyShip.setX(gameData.getDisplayHeight()/3);
         enemyShip.setY(gameData.getDisplayWidth()/3);
+        enemyShip.setRadius(10);
         return enemyShip;
     }
 
