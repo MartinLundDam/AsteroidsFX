@@ -28,7 +28,7 @@ public class AstoroidControlSystem implements IEntityProcessingService {
             asteroid.setX(asteroid.getX() + changeX*0.5);
             asteroid.setY(asteroid.getY() + changeY*0.5);
 
-            //below makes the astoroid stop when hit border.
+            //below makes the astoroid stop when hit border by removing it.
             if (asteroid.getX() < 0) {
                 world.removeEntity(asteroid);
             }
