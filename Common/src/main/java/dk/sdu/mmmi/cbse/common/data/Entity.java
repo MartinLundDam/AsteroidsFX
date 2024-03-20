@@ -60,7 +60,7 @@ public class Entity implements Serializable {
         return radius;
     }
 
-    public void setRadius(float Radius){
+    public void setRadius(float radius){
         this.radius = radius;
     }
 

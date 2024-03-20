@@ -58,7 +58,8 @@ public class AstoroidControlSystem implements IEntityProcessingService {
         enemyAsteroid.setPolygonCoordinates(5, -5, 5, 5, -5, 5, -5, -5);
         enemyAsteroid.setX(gameData.getDisplayHeight()/4);
         enemyAsteroid.setY(gameData.getDisplayWidth()/4);
-        enemyAsteroid.setRadius(15);
+        enemyAsteroid.setRadius(5);
+        enemyAsteroid.setRotation(random.nextInt(90)); //direction it goes
         return enemyAsteroid;
     }
 }
