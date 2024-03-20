@@ -55,10 +55,10 @@ public class AstoroidControlSystem implements IEntityProcessingService {
     private Entity createAsteroid(GameData gameData) {
         //make astoroid spawn another way
         Entity enemyAsteroid = new Asteroid();
-        enemyAsteroid.setPolygonCoordinates(-5,-5,10,-10,5,5,-10,10);
+        enemyAsteroid.setPolygonCoordinates(5, -5, 5, 5, -5, 5, -5, -5);
         enemyAsteroid.setX(gameData.getDisplayHeight()/4);
         enemyAsteroid.setY(gameData.getDisplayWidth()/4);
-        enemyAsteroid.setRadius(5);
+        enemyAsteroid.setRadius(15);
         return enemyAsteroid;
     }
 }

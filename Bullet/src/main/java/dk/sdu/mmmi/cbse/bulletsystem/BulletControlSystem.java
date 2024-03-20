@@ -15,19 +15,23 @@ public class BulletControlSystem implements IEntityProcessingService, BulletSPI 
         for (Entity bullet : world.getEntities(Bullet.class)) {
             double changeX = Math.cos(Math.toRadians(bullet.getRotation()));
             double changeY = Math.sin(Math.toRadians(bullet.getRotation()));
-            bullet.setX(bullet.getX() + changeX * 2);
-            bullet.setY(bullet.getY() + changeY * 2);
+            bullet.setX(bullet.getX() + changeX * 3); //tal er hastighed på bullet
+            bullet.setY(bullet.getY() + changeY * 3);
+            //System.out.println(bullet.getX() + " + " + bullet.getY());
         }
 
-        //remove bullet when hit edge
+        // TODO remove bullet when hit edge
     }
 
     @Override
     public Entity createBullet(Entity shooter, GameData gameData) {
         Entity bullet = new Bullet();
         bullet.setPolygonCoordinates(1, -1, 1, 1, -1, 1, -1, -1);
-        bullet.setX(shooter.getX());
-        bullet.setY(shooter.getY());
+        double changeX = Math.cos(Math.toRadians(shooter.getRotation()));
+        double changeY = Math.sin(Math.toRadians(shooter.getRotation()));
+
+        bullet.setX(shooter.getX() + changeX * 10); //tal er hvor langt fra shooter bullet starter
+        bullet.setY(shooter.getY() + changeY * 10);
         bullet.setRotation(shooter.getRotation());
         bullet.setRadius(1);
         return bullet;
