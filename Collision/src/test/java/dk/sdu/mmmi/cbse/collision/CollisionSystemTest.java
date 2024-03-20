@@ -28,7 +28,7 @@ class CollisionSystemTest {
         asterroid.setRadius(19);
 
         CollisionSystem collisionSystem = new CollisionSystem();
-
+        //There is collision
         assertTrue(collisionSystem.collides(bullet,asterroid));
 
     }
@@ -45,7 +45,7 @@ class CollisionSystemTest {
        asterroid.setRadius(16);
 
        CollisionSystem collisionSystem = new CollisionSystem();
-
+        //There is not collision
        assertFalse(collisionSystem.collides(bullet,asterroid));
    }
 }
