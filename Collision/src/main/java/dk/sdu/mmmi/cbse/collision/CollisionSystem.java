@@ -1,11 +1,13 @@
 package dk.sdu.mmmi.cbse.collision;
 
 import dk.sdu.mmmi.cbse.common.data.Entity;
+import dk.sdu.mmmi.asteroidsystem.Asteroid;
 import dk.sdu.mmmi.cbse.common.data.GameData;
 import dk.sdu.mmmi.cbse.common.data.World;
 import dk.sdu.mmmi.cbse.common.services.IPostEntityProcessingService;
 
 import java.util.Objects;
+import java.util.Random;
 
 public class CollisionSystem implements IPostEntityProcessingService {
 
@@ -47,8 +49,9 @@ public class CollisionSystem implements IPostEntityProcessingService {
     }
 
  */
-public CollisionSystem() {
-}
+    Random random = new Random();
+    public CollisionSystem() {
+    }
 
     @Override
     public void process(GameData gameData, World world) {
@@ -60,13 +63,21 @@ public CollisionSystem() {
                 if (entity1.getID().equals(entity2.getID())) {
                     continue;
                 }
-//                System.out.println("check 2 entities");
 
+                //if (entity1.getclass == entity2.getclass) if same type
                 // CollisionDetection
                 if (this.collides(entity1, entity2)) {
                     System.out.println("Collide!!!");
-                    world.removeEntity(entity1);
-                    world.removeEntity(entity2);
+                    // TODO If asteroid collide, they will go another direction
+                    if (entity1 instanceof Asteroid && entity2 instanceof Asteroid) {
+                        //entity1.setRotation(entity1.getRotation()+random.nextInt(90));
+                        //entity2.setRotation(entity2.getRotation()+random.nextInt(90));
+                        continue;
+                    }
+                    else {
+                        world.removeEntity(entity1);
+                        world.removeEntity(entity2);
+                    }
                 }
             }
         }

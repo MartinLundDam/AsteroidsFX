@@ -14,7 +14,7 @@ public class AstoroidControlSystem implements IEntityProcessingService {
 
     Random random = new Random();
     int randomDirection = random.nextInt(2);
-    int randomSpawn = random.nextInt(50);
+    int randomSpawn = random.nextInt(70);
 
     private Entity asteroid;
 
@@ -55,10 +55,13 @@ public class AstoroidControlSystem implements IEntityProcessingService {
     private Entity createAsteroid(GameData gameData) {
         //make astoroid spawn another way
         Entity enemyAsteroid = new Asteroid();
-        enemyAsteroid.setPolygonCoordinates(5, -5, 5, 5, -5, 5, -5, -5);
+        //enemyAsteroid.setPolygonCoordinates(-7,5,-6.5,9,-3, 10, -1, 9, -2, 8, 1, 7, 0, 6, 1, 5, -1, 3, -2, 4, -3, 2, -5, 3, -7, 3);
+        enemyAsteroid.setPolygonCoordinates(-20, 0, -18, 10, -16, 8, -12, 12, -10, 10, -6, 10, -2, 12, 0, 10, -2, 6, 0, 4, -4, 0, 0, -3, -2, -6, -8, -8, -10, -12, -8, -16, -8, -16, -4);
         enemyAsteroid.setX(gameData.getDisplayHeight()/4);
         enemyAsteroid.setY(gameData.getDisplayWidth()/4);
-        enemyAsteroid.setRadius(15);
+        enemyAsteroid.setRotation(random.nextInt(90));
+        enemyAsteroid.setRadius(10);
+
         return enemyAsteroid;
     }
 }
