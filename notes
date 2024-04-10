@@ -20,6 +20,12 @@ Instanstiere objectgraf med xml
 - properties - spring version
 spring på mods.mvn -> includeartifact for at kopier over.
 
+SPLITPACKAGE:
+- Lav en CBSE folder i Asteroid og lav en klasse med samme navn som noget andet.
+- Lav en plugin folder, og tilføj fra mods-mvn til plugin folder.
+- Kopier hans (plugin-kode) til main. 
+
+
 Clean architecture: Ved brug af bean begynder forretningsmodel at afhænge af noget længere ude (spring aware interfaces)
 
 IoC: Inversion of control
