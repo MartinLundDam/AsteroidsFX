@@ -30,6 +30,8 @@ Den tjekker alle entities på mappet, hvilket måske ikke er nødvendigt.
 
 MICROSERVICE:
 - lab = spring scorecalculator.
+- Lav modul? eller indsæt mappen og lav det om til modul?
+
 - forskel på komponentbaseret og microsevice er bla. at microservice virker igennem api/over web/cloud.
 Hver service har sin egen database (decentraliceret).
 
