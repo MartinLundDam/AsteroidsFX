@@ -7,6 +7,7 @@
     <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>AsteroidsJPMS</name>
+
     <repositories>
     </repositories>
 
@@ -19,6 +20,7 @@
         <module>Enemy</module>
         <module>Asteroid</module>
         <module>Collision</module>
+        <module>Splitpackage</module>
     </modules>
     <properties>
         <java>java</java>

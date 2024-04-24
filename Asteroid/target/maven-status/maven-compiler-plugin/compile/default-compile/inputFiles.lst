@@ -1,4 +1,5 @@
-/Users/martindam/AsteroidsFX/Asteroid/src/main/java/dk/sdu/mmmi/asteroidsystem/Asteroid.java
-/Users/martindam/AsteroidsFX/Asteroid/src/main/java/dk/sdu/mmmi/asteroidsystem/AsteroidPlugin.java
-/Users/martindam/AsteroidsFX/Asteroid/src/main/java/dk/sdu/mmmi/asteroidsystem/AstoroidControlSystem.java
+/Users/martindam/AsteroidsFX/Asteroid/src/main/java/dk/sdu/mmmi/cbse/bulletsystem/Asteroid.java
+/Users/martindam/AsteroidsFX/Asteroid/src/main/java/dk/sdu/mmmi/cbse/bulletsystem/AstoroidControlSystem.java
+/Users/martindam/AsteroidsFX/Asteroid/src/main/java/dk/sdu/mmmi/cbse/bulletsystem/AsteroidPlugin.java
+/Users/martindam/AsteroidsFX/Asteroid/src/main/java/dk/sdu/mmmi/cbse/bulletsystem/HelloWorld.java
 /Users/martindam/AsteroidsFX/Asteroid/src/main/java/module-info.java
