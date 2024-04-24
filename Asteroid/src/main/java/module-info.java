@@ -1,6 +1,6 @@
-import dk.sdu.mmmi.cbse.bulletsystem.AsteroidPlugin;
-import dk.sdu.mmmi.cbse.bulletsystem.AstoroidControlSystem;
-import dk.sdu.mmmi.cbse.bulletsystem.HelloWorld;
+import dk.sdu.mmmi.cbse.playersystem.AsteroidPlugin;
+import dk.sdu.mmmi.cbse.playersystem.AstoroidControlSystem;
+import dk.sdu.mmmi.cbse.playersystem.HelloWorld;
 import dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;
 import dk.sdu.mmmi.cbse.common.services.IGamePluginService;
 import org.splitPackageLayer.SplitPackageProvider.JavaSplitPackageProvider;

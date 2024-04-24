@@ -1,4 +1,4 @@
-package dk.sdu.mmmi.cbse.bulletsystem;
+package dk.sdu.mmmi.cbse.playersystem;
 
 import org.splitPackageLayer.SplitPackageProvider.JavaSplitPackageProvider;
 
