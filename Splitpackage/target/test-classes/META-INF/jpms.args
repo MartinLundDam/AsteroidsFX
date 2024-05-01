@@ -1,0 +1,4 @@
+--patch-module
+Splitpackage=_
+--add-reads
+Splitpackage=ALL-UNNAMED
