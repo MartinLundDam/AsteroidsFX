@@ -32,6 +32,9 @@ MICROSERVICE:
 - lab = spring scorecalculator.
 - Lav modul? eller indsæt mappen og lav det om til modul?
 
+Nu er den inde i AsteroidFX, så kan man åbne i nyt vindue? Men jeg kan skrive at det virker nu (forbindelsen ihvertfald).
+
+
 - forskel på komponentbaseret og microsevice er bla. at microservice virker igennem api/over web/cloud.
 Hver service har sin egen database (decentraliceret).
 
