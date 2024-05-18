@@ -12,10 +12,6 @@ public interface IEntityProcessingService {
      *
      * @param gameData
      * @param world
-     * @throws NullPointerException
-     *
-     *
-     *
      */
     void process(GameData gameData, World world);
 }
