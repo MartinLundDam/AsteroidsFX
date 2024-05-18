@@ -15,7 +15,7 @@ public class BulletControlSystem implements IEntityProcessingService, BulletSPI 
         for (Entity bullet : world.getEntities(Bullet.class)) {
             double changeX = Math.cos(Math.toRadians(bullet.getRotation()));
             double changeY = Math.sin(Math.toRadians(bullet.getRotation()));
-            bullet.setX(bullet.getX() + changeX * 3); //tal er hastighed på bullet
+            bullet.setX(bullet.getX() + changeX * 3); //number is speed of bullet
             bullet.setY(bullet.getY() + changeY * 3);
             //System.out.println(bullet.getX() + " + " + bullet.getY());
         }
@@ -30,7 +30,7 @@ public class BulletControlSystem implements IEntityProcessingService, BulletSPI 
         double changeX = Math.cos(Math.toRadians(shooter.getRotation()));
         double changeY = Math.sin(Math.toRadians(shooter.getRotation()));
 
-        bullet.setX(shooter.getX() + changeX * 10); //tal er hvor langt fra shooter bullet starter
+        bullet.setX(shooter.getX() + changeX * 10); //number is how far away from the shooter the bullet starts.
         bullet.setY(shooter.getY() + changeY * 10);
         bullet.setRotation(shooter.getRotation());
         bullet.setRadius(1);
