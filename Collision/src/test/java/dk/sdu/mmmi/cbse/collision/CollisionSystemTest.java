@@ -6,15 +6,6 @@ import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CollisionSystemTest {
-
-    @org.junit.jupiter.api.BeforeEach
-    void setUp() {
-    }
-
-    @org.junit.jupiter.api.AfterEach
-    void tearDown() {
-    }
-
     @org.junit.jupiter.api.Test
     void collides() {
 
@@ -30,7 +21,6 @@ class CollisionSystemTest {
         CollisionSystem collisionSystem = new CollisionSystem();
         //There is collision
         assertTrue(collisionSystem.collides(bullet,asterroid));
-
     }
 
     @org.junit.jupiter.api.Test
