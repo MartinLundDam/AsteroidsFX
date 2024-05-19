@@ -9,15 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoApplication {
 	private Long totalScore = 0L;
-
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
-
 	@GetMapping("/score")
 	public Long calculateHealt(@RequestParam(value = "point") Long point) {
 		totalScore += point;
 		return totalScore ;
 	}
-
 }
