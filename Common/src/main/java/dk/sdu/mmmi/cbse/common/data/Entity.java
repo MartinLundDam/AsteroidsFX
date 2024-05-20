@@ -13,6 +13,7 @@ public class Entity implements Serializable {
     private double rotation;
     private float radius;
     private int hitPoints;
+    private boolean canSplit = true;
 
 
     public String getID() {
@@ -71,5 +72,11 @@ public class Entity implements Serializable {
         this.hitPoints = hitPoints;
     }
 
+    public boolean isCanSplit() {
+        return canSplit;
+    }
 
+    public void setCanSplit(boolean canSplit) {
+        this.canSplit = canSplit;
+    }
 }

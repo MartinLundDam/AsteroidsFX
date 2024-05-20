@@ -1,55 +1,16 @@
 package dk.sdu.mmmi.cbse.collision;
 
 import dk.sdu.mmmi.cbse.common.data.Entity;
-import dk.sdu.mmmi.asteroidsystem.Asteroid;
 import dk.sdu.mmmi.cbse.common.data.GameData;
 import dk.sdu.mmmi.cbse.common.data.World;
 import dk.sdu.mmmi.cbse.common.services.IPostEntityProcessingService;
 
-import java.util.Objects;
 import java.util.Random;
 
 public class CollisionSystem implements IPostEntityProcessingService {
 
-/*
-    public CollisionSystem() {
-    }
-
-    @Override
-    public void process(GameData gameData, World world) {
-        for (Entity entity1 : world.getEntities()) {
-            for (Entity entity2 : world.getEntities()) {
-
-                if (Objects.equals(entity1.getID(), entity2.getID())) {
-                    continue;
-                }
-                if (isColliding(entity1,entity2)) {
-                    world.removeEntity(entity1); //remove bullet and the hitted entity.
-                    world.removeEntity(entity2);
-
-                    //make use of hitpoints, so a enemy has 5 hitpoint = 5 bullets.
-                }
-
-
-            }
-        }
-    }
-
-    public boolean isColliding(Entity entity1, Entity entity2) {
-        float xLen = (float) entity1.getX() - (float) entity2.getX();
-        float yLen = (float) entity1.getY() - (float) entity2.getY();
-        float Lengt = (float) Math.sqrt(xLen * xLen + yLen * yLen);
-        /*if (Lengt < (entity1.getRadius() + entity2.getRadius())) {
-            return true;
-        }
-        return false;
-
-
-        return Lengt < (entity1.getRadius() + entity2.getRadius());
-    }
-
- */
     Random random = new Random();
+
     public CollisionSystem() {
     }
 
@@ -63,39 +24,36 @@ public class CollisionSystem implements IPostEntityProcessingService {
                 if (entity1.getID().equals(entity2.getID())) {
                     continue;
                 }
+                if (entity1.getClass() == entity2.getClass()) {
+                    continue;
+                }
 
-                //if (entity1.getclass == entity2.getclass) if same type
                 // CollisionDetection
                 if (this.collides(entity1, entity2)) {
-                    System.out.println("Collide!!!");
-                    // TODO If asteroid collide, they will go another direction
-                    if (entity1 instanceof Asteroid && entity2 instanceof Asteroid) {
-                        //entity1.setRotation(entity1.getRotation()+random.nextInt(90));
-                        //entity2.setRotation(entity2.getRotation()+random.nextInt(90));
-                        continue;
-                    }
-                    else {
+                    entity1.setHitPoints(entity1.getHitPoints() - 1);
+                    entity2.setHitPoints(entity2.getHitPoints() - 1);
+
+                    if (entity1.getHitPoints() < 1){
                         world.removeEntity(entity1);
+                        }
+
+                    if (entity2.getHitPoints() < 1) {
                         world.removeEntity(entity2);
                     }
                 }
             }
         }
-
     }
+
 
     public Boolean collides(Entity entity1, Entity entity2) {
         float dx = (float) entity1.getX() - (float) entity2.getX();
         float dy = (float) entity1.getY() - (float) entity2.getY();
         float distance = (float) Math.sqrt(dx * dx + dy * dy);
         if (distance < (entity1.getRadius() + entity2.getRadius())) {
-            //System.out.println("collides");
             return true;
         }
-        //System.out.println("collides method");
         return false;
-
-        //return distance < (entity1.getRadius() + entity2.getRadius());
     }
 
 

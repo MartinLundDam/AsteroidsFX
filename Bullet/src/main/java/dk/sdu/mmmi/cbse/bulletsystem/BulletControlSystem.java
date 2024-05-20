@@ -18,9 +18,23 @@ public class BulletControlSystem implements IEntityProcessingService, BulletSPI 
             bullet.setX(bullet.getX() + changeX * 3); //number is speed of bullet
             bullet.setY(bullet.getY() + changeY * 3);
             //System.out.println(bullet.getX() + " + " + bullet.getY());
+            if (bullet.getX() < 0) {
+                world.removeEntity(bullet);
+            }
+
+            if (bullet.getX() > gameData.getDisplayWidth()) {
+                world.removeEntity(bullet);
+            }
+
+            if (bullet.getY() < 0) {
+                world.removeEntity(bullet);
+            }
+
+            if (bullet.getY() > gameData.getDisplayHeight()) {
+                world.removeEntity(bullet);
+            }
         }
 
-        // TODO remove bullet when hit edge
     }
 
     @Override
@@ -34,6 +48,7 @@ public class BulletControlSystem implements IEntityProcessingService, BulletSPI 
         bullet.setY(shooter.getY() + changeY * 10);
         bullet.setRotation(shooter.getRotation());
         bullet.setRadius(1);
+        bullet.setHitPoints(1);
         return bullet;
     }
 }

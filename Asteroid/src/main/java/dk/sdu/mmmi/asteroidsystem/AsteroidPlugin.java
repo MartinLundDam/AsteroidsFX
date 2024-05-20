@@ -4,6 +4,8 @@ import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
 import dk.sdu.mmmi.cbse.common.data.World;
 import dk.sdu.mmmi.cbse.common.services.IGamePluginService;
+import dk.sdu.mmmi.cbse.commonasteroid.Asteroid;
+
 public class AsteroidPlugin implements IGamePluginService {
 
     private Entity asteroid;
@@ -20,7 +22,6 @@ public class AsteroidPlugin implements IGamePluginService {
         world.addEntity(asteroid);
     }
 
-
     private Entity createAsteroid(GameData gameData) {
         // TODO: make astoroid spawn in another way
         Entity enemyAsteroid = new Asteroid();
@@ -28,7 +29,7 @@ public class AsteroidPlugin implements IGamePluginService {
         enemyAsteroid.setX(gameData.getDisplayHeight()/4);
         enemyAsteroid.setY(gameData.getDisplayWidth()/4);
         enemyAsteroid.setRadius(15);
-        enemyAsteroid.setHitPoints(2); //need 2 hit to die.
+        enemyAsteroid.setHitPoints(5); //need 2 hit to die.
 
         //rotation
 
